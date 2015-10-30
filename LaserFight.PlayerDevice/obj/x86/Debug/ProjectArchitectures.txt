@@ -1,0 +1,1 @@
+E:\Visual Studio (Source Control)\Universal Apps\IoT\LaserFight\LaserFight.PlayerDevice\LaserFight.PlayerDevice.csproj;x86
