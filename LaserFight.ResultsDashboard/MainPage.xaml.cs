@@ -31,6 +31,8 @@ namespace LaserFight.ResultsDashboard
 
         // Assuming that the playerId = deviceId 
         // Since each player has only one device
+        // This device Id must be registered first with the AzureIoTHubRegister
+        // Each device has unique device Id. if you have more than one device then this should be string[] of devices
         private string deviceId = "<deviceId>";
 
 
@@ -59,7 +61,8 @@ namespace LaserFight.ResultsDashboard
             });
 
             iotHelper = new AzureIoTHubHelper(deviceId);
-            iotHelper.Send(deviceId);
+            // Here the message is the device Id itself as example
+            iotHelper.Send(deviceId, deviceId);
             iotHelper.Message_Received += PlayerLost;
         }
 

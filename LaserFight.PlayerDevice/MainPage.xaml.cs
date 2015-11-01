@@ -28,6 +28,7 @@ namespace LaserFight.PlayerDevice
     {
         private LifePointsManager lifePoints;
         private AzureIoTHubHelper azureIoTHelper = new AzureIoTHubHelper("<deviceId>");
+        string dashboardId = "<Dashboard device Id>";
 
         public MainPage()
         {
@@ -55,7 +56,7 @@ namespace LaserFight.PlayerDevice
             lifePoints.IsActive = false;
 
             // Send user's score to the dashboard application
-            azureIoTHelper.Send(playerId);
+            azureIoTHelper.Send(dashboardId, playerId);
         }
     }
 }

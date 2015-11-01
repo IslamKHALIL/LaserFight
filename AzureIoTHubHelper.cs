@@ -45,10 +45,10 @@ namespace LaserFight.Helpers
             }
         }
 
-        public async Task Send(string id)
+        public async Task Send(string id, string message)
         {
             DeviceClient deviceClient = DeviceClient.CreateFromConnectionString(_ConnectionString, id, TransportType.Http1);
-            var msg = new Message(Encoding.UTF8.GetBytes(id));
+            var msg = new Message(Encoding.UTF8.GetBytes(message));
             await deviceClient.SendEventAsync(msg);
         }
     }
